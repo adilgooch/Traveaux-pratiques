@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+    box-sizing: border-box;
+    flex-direction: column;
+    font-size: 0.795em;
+    display: flex;
+    }
+    :root{
+      --color-body-text: #000;
+      --color-page-text:#454545;
+      --color-page-bg: #fff;
+      --font-stack-alternate: "Poppins", roboto, helvetica, arial, sans-serif;
+      --font-size-base: 1.2rem;
+    }
+    * {
+    box-sizing: border-box;
+    }
+    form div  p {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 var(--small-value);
+    }
+    .content {
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    }
+    button , a{
+      background-attachment: fixed;
+      font: 0.9em sans-serif;
+      margin-top: 10px;
+      border-radius: 10px;
+      color: #000;
+      text-decoration: none;
+      
+    }
+    button:hover {
+      background-color: black;
+      color: aliceblue;
+      cursor: pointer;
+      box-shadow:0px 3px 2px  rgb(128, 127, 127);
+      
+    }
+    a:hover  {
+      background-color: black;
+      color: aliceblue;
+      cursor: pointer;
+
+      
+    }
+    .choix{
+      margin-left: 10px;
+      flex-direction: column;
+      clear: both;
+      display: flex;
+      padding: var(--medium-value) 10px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 600;
+}
+    form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+    }
+    body {
+    min-height: 100vh;
+    color: var(--color-body-text);
+    font-family: var(--font-stack-alternate);
+    font-size: var(--font-size-base);
+    flex-direction: column;
+    display: flex;
+    background: linear-gradient(rgba(255, 254, 254, 0.72), rgba(192, 189, 189, 0.72)),
+      url("images/reponces-images.jpg") center/cover no-repeat fixed;
+    }
+    p {
+    display: block;
+    margin-block-start: 0.9em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    color: var(--color-page-text);
+    }
+    .content p {
+    margin-top: var(--medium-value);
+    margin-bottom: var(--medium-value);
+    }
+    .question{
+      display: flexbox;
+      text-box:black;
+      border-color: #000;
+      border-radius: 15px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      background:#EEF4FF;
+      margin-bottom: 20px;
+      padding:10%;
+      
+    }
+    .page {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px 40px;
+      background: rgba(241, 233, 233, 0.88);
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    }
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: oblique;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="all">
+  <H1>QCM</H1>
+  <button id="show">Start the quiz</button>
+  <div class="content" id="hidden" hidden>
+  <form >
+    <div class="question">
+      <p style="font-weight: bold;">1.What is the color of snow ? </p>
+      <input type="text" id="Q1" value="">
+      <button type="button" id="btn-submit1">submit</button>
+      <p id="message1"></p>
+    </div>
+    <div class="question">
+      <p style="font-weight: bold;">2.Is it true that water starts evaporating at 90C(true/false)? </p>
+      <input type="text" id="Q2">
+      <button type="button" id="btn-submit2">submit</button>
+      <p id="message2"></p>
+
+    </div>
+    <div id="color" class="question">
+      <p style="font-weight: bold;">3.What is the result color when mixing blue and green?</p>
+      <div class="choix">
+      <label for="">  <input type="checkbox" id="choix1" value="0">Red</label>
+      <label for=""><input type="checkbox" id="choix2" value="0">Black</label>
+      <label for=""><input type="checkbox" id="choix3" value="1">Green</label>
+      </div>
+      <button type="button" id="btn-sumbit3">submit</button>
+      <p id="message3"></p>
+    </div>
+    <div id="capital" class="question">
+      <p style="font-weight: bold;">4.What is the capital of Uk? </p>
+      <div class="choix">
+      <label for=""><input type="checkbox" id="chois1" value="1">London</label>
+      <label for=""><input type="checkbox" id="chois2" value="0">Paris</label>
+      <label for=""><input type="checkbox" id="chois3" value="0">Manchester</label>
+      </div>
+      <button type="button" id="btn-sumbit4">submit</button>
+      <p id="message4"></p>
+    </div>
+    <div id="border" class="question">
+      <p style="font-weight: bold;">5.Which contry shares same border as France?  </p>
+      <div class="choix">
+      <label for=""><input type="checkbox" id="chois4" value="0">Morocco</label>
+      <label for=""><input type="checkbox" id="chois5" value="1">Belgium</label>
+      <label for=""><input type="checkbox" id="chois6" value="1">Switzerland</label>
+      <label for=""><input type="checkbox" id="chois7" value="0">Austria</label>
+      </div>
+      <button type="button" id="btn-sumbit5">submit</button>
+      <p id="message5"></p>
+    </div>
+    <div>
+    <button type="button" id="btn-show-score">Show final score</button>
+    <p id="final-score" ></p>
+    <button type="button" id="btn-solution-page" ><a href="reponces.html"  rel="noopener noreferrer">Show ansewrs </a></button>
+    </div>
+  </form>
+  </div>
+  </div>
+  <script src="try.js">
+
+  </script>
+</body>
+</html>
