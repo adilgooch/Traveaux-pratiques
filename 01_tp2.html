@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        body{
+        background-color:#F4F7FB;
+
+    }
+    .monDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 40px ;
+        background-color:#1B2631 ;
+        border-color: #354454 ;
+        width:250px;
+        max-width: 100%;
+    }
+    .monDiv p{
+        color:#EEF3F8;
+        
+    }
+    .mere {
+        width: calc(100% - 32px);
+        max-width: 420px;
+        margin: 24px auto;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 4px 12px #18243414;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+    button{
+        color: #101A31;
+        border-color: #354454 ;
+        border-radius: 6px;
+    }
+    button:hover{
+        color:#F4F7FB;
+        background-color: #101A31;
+
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="mere" >
+        <div class="monDiv" id="monDiv">
+        <p name="text">Mon bloc de couleur!</p>
+        </div>
+        <p id="couleurIndice">couleur: </p>
+        <button type="button" id="btn-color">Changer le couleur</button>
+    </div>
+    <script src="01.js"></script>
+</body>
+</html>

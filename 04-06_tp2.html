@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 24px 0;
+        background-color: #f4f7fb;
+        color: #182434;
+        font-family: Arial, sans-serif;
+    }
+
+    main {
+        width: calc(100% - 32px);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        }
+
+    .card {
+        margin-bottom: 24px;
+        padding: 24px;
+        background-color: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px #18243414;
+        }
+
+    .two-number-calculator {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        }
+
+    input {
+        padding: 8px;
+        font-size: 16px;
+        }
+
+    .operation-buttons,
+    .carousel-buttons {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        }
+
+    button {
+        padding: 9px 14px;
+        border: 1px solid #354454;
+        border-radius: 8px;
+        background-color: #91aaff;
+        color: #182434;
+        font-size: 16px;
+        cursor: pointer;
+        }
+
+    button:hover {
+        filter: brightness(0.95);
+        }
+
+    #res {
+        min-height: 24px;
+        font-weight: bold;
+        }
+
+    .calculator {
+        width: 280px;
+        max-width: 100%;
+        margin: 16px auto 0;
+        padding: 14px;
+        border: 2px solid #182434;
+        border-radius: 16px;
+        background-color: #f7f9fc;
+        }
+
+    .display {
+        width: 100%;
+        height: 48px;
+        margin-bottom: 10px;
+        text-align: right;
+        font-size: 22px;
+        }
+
+    .calculator-keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+        }
+
+    .calculator-keys button {
+        height: 44px;
+        }
+
+    .calculator-keys .zero {
+        grid-column: span 2;
+        }
+
+    .carousel {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        }
+
+    .carousel img {
+        display: block;
+        width: 100%;
+        height: 280px;
+        border-radius: 12px;
+        object-fit: cover;
+        background-color: #e2eaff;
+        }
+
+    #caption {
+        color: #657386;
+    }
+
+    .carousel-buttons {
+        justify-content: center;
+        }
+
+    .dropdown {
+        max-width: 300px;
+        }
+
+    .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
+        padding: 0 12px;
+        border-radius: 8px;
+        background-color: #f7f9fc;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+        }
+
+    .dropdown.open .dropdown-content {
+        max-height: 120px;
+        padding: 12px;
+        opacity: 1;
+        }
+
+    .dropdown-content a {
+        color: #315fda;
+        text-decoration: none;
+        }
+
+    .dropdown-content a:hover {
+        text-decoration: underline;
+        }
+    </style>
+  <title>Mes exercices JavaScript</title>
+</head>
+<body>
+  <main>
+    <h1>Mes exercices JavaScript</h1>
+
+    <section class="card" id="calc">
+      <h2>4. Calculateur</h2>
+
+      <h3>Calcul avec deux nombres</h3>
+      <div class="two-number-calculator">
+        <label>
+          Premier nombre
+          <input id="n1" type="number" placeholder="Exemple : 5">
+        </label>
+
+        <label>
+          Deuxième nombre
+          <input id="n2" type="number" placeholder="Exemple : 9">
+        </label>
+      </div>
+
+      <div class="operation-buttons">
+        <button class="operation-button" data-operation="+">+</button>
+        <button class="operation-button" data-operation="-">-</button>
+        <button class="operation-button" data-operation="*">*</button>
+        <button class="operation-button" data-operation="/">÷</button>
+      </div>
+
+      <p id="res">Résultat :</p>
+
+      <h3>Calculatrice à boutons</h3>
+      <div class="calculator">
+        <input id="screen" class="display" type="text" readonly>
+
+        <div class="calculator-keys">
+          <button data-action="clear">C</button>
+          <button data-action="backspace">⌫</button>
+          <button data-operator="/">÷</button>
+          <button data-operator="*">*</button>
+
+          <button data-number="7">7</button>
+          <button data-number="8">8</button>
+          <button data-number="9">9</button>
+          <button data-operator="-">*</button>
+
+          <button data-number="4">4</button>
+          <button data-number="5">5</button>
+          <button data-number="6">6</button>
+          <button data-operator="+">+</button>
+
+          <button data-number="1">1</button>
+          <button data-number="2">2</button>
+          <button data-number="3">3</button>
+          <button data-action="equals">=</button>
+
+          <button class="zero" data-number="0">0</button>
+          <button data-action="decimal">.</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="gal">
+      <h2>5. Carrousel d'images</h2>
+
+      <div class="carousel">
+        <img id="pic" src="" alt="">
+        <p id="caption"></p>
+      </div>
+
+      <div class="carousel-buttons">
+        <button id="prev">Précédent</button>
+        <button id="next">Suivant</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>6. Menu déroulant animé</h2>
+
+      <div class="dropdown" id="drop">
+        <button id="menuBtn" aria-expanded="false">Ouvrir le menu</button>
+
+        <div class="dropdown-content">
+          <a href="#calc">Calculateur</a>
+          <a href="#gal">Carrousel d'images</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="04-06.js" ></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      box-sizing: border-box;
+      flex-direction: column;
+      font-size: 0.795em;
+      display: flex;
+    }
+    :root{
+      --color-body-text: #000;
+      --color-page-text:#454545;
+      --color-page-bg: #fff;
+      --font-stack-alternate: "Poppins", roboto, helvetica, arial, sans-serif;
+      --font-size-base: 1.2rem;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    form div  p {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 var(--small-value);
+    }
+    .content {
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    }
+    button , a{
+      background-attachment: fixed;
+      font: 0.9em sans-serif;
+      margin-top: 10px;
+      border-radius: 10px;
+      color: #000;
+      text-decoration: none;
+      
+    }
+    button:hover {
+      background-color: black;
+      color: aliceblue;
+      cursor: pointer;
+      box-shadow:0px 3px 2px  rgb(128, 127, 127);
+      
+    }
+    a:hover  {
+      background-color: black;
+      color: aliceblue;
+      cursor: pointer;
+
+      
+    }
+    .formulaire{
+      margin-left: 10px;
+      flex-direction: column;
+      clear: both;
+      display: flex;
+      padding: var(--medium-value) 10px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 600;
+}
+    form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+    }
+    body {
+    min-height: 100vh;
+    color: var(--color-body-text);
+    font-family: var(--font-stack-alternate);
+    font-size: var(--font-size-base);
+    flex-direction: column;
+    display: flex;
+    background: linear-gradient(rgba(255, 254, 254, 0.72), rgba(192, 189, 189, 0.72)),
+      url("images/reponces-images.jpg") center/cover no-repeat fixed;
+    }
+    .pp {
+    display: block;
+    margin-block-start: 0.9em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    color: var(--color-page-text);
+    margin-top: var(--medium-value);
+    margin-bottom: var(--medium-value);
+    }
+    .fort{
+      width:270px;
+      max-width:100%;
+      display: flexbox;
+      text-box:black;
+      border-color: #000;
+      border-radius: 15px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      background:#EEF4FF;
+      margin-bottom: 20px;
+      padding:10%;
+      
+    }
+    .page {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px 40px;
+      background: rgba(241, 233, 233, 0.88);
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    #validation{
+      color:red;
+      font-size: 1.0rem;
+    }
+    .message{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="all">
+  <div class="content" >
+  <form >
+    <div id="border" class="fort">
+      <p class:"pp">Formulaire  </p>
+      <div class="formulaire">
+      <label for="name">Nom:<input type="text" id="name" placeholder="ex.Kamal"></label>
+      <label for="email">Email:<input type="text" id="email" placeholder="exemple@gamil.com"></label>
+      </div>
+      <div class="message">
+        <p id="validation"></p>
+        <button type="button" id="valider">Valider</button>
+      </div>
+    </div>
+    
+  </form>
+  </div>
+  </div>
+  <script src="02.js"></script>
+</body>
+</html>

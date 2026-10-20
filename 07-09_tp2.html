@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercices 7 à 9</title>
+  <style>
+    body { 
+      margin: 0; 
+      padding: 24px; 
+      background: #f4f7fb; 
+      color: #182434; 
+      font-family: Arial, sans-serif; 
+    }
+    main { 
+      max-width: 760px; 
+      margin: auto; }
+    section { 
+      margin-bottom: 20px; 
+      padding: 20px; 
+      border-radius: 16px; 
+      background: white; 
+      box-shadow: 0 4px 12px #18243414; }
+    button, input { 
+      padding: 9px; 
+      font-size: 16px; }
+    button { 
+      border: 1px solid #354454; 
+      border-radius: 8px; 
+      background: #91aaff; 
+      cursor: pointer; }
+    #clock { 
+      font-size: 28px; 
+      font-weight: bold; }
+    .mouse-box { 
+      display: grid; 
+      place-items: center; 
+      height: 100px; 
+      border-radius: 12px; 
+      background: #91aaff; 
+      transition: background-color .2s; }
+    .mouse-box.hovered { 
+      background: #8ee1b2; }
+    .todo-row { 
+      display: flex; 
+      
+      gap: 8px; flex-wrap: wrap; }
+    #tasks { padding-left: 24px; }
+    #tasks li { margin: 8px 0; }
+    #tasks li.done span { color: #657386; 
+      text-decoration: line-through; }
+    .delete { margin-left: 6px; 
+      background: #ffe3df; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Exercices JavaScript 7 à 9</h1>
+    <section>
+      <h2>7. Timer en temps réel</h2>
+      <p>Temps depuis l’ouverture de la page :</p>
+      <p id="clock">00:00:00</p>
+    </section>
+
+    <section>
+      <h2>8. Événement de souris</h2>
+      <div class="mouse-box" id="box">Passe la souris ici</div>
+    </section>
+
+    <section>
+      <h2>9. To-do list</h2>
+      <div class="todo-row">
+        <input id="taskInput" type="text" placeholder="Écris une tâche">
+        <button id="addTask">Ajouter</button>
+      </div>
+      <ul id="tasks">
+        
+      </ul>
+    </section>
+  </main>
+  <script src="07-09.js"></script>
+</body>
+</html>
